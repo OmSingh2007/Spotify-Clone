@@ -11,3 +11,10 @@
 .items-center{
     align-items: center;
 }
+.rounded{
+    border-radius:7px;
+}
+.margin{
+    margin:11px;
+    padding:1px;
+}
