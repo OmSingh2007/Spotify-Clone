@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 /* body{
     background-color:black;
     color:white;
@@ -5,6 +6,7 @@
  *{
     margin: 0px;
     padding: 0px;
+    font-family:'Robot',sans-serif;
  }
 .left{
     width:25vw;
@@ -17,16 +19,41 @@
     color:white;
 }
 .logo{
-    margin:10px;
+    margin-right:7px;
+    margin:6px;
+    gap:7px;
 }
-
+.logotxt{
+    padding-top:8px;
+    font-weight: bold;
+}
+.library{
+    min-height: 60vh;
+    gap:10px;
+    padding:10px;
+    padding-bottom:5px;
+    padding-right:4px;
+}
+.lib{
+    opacity: 0.7;
+    padding:0px;
+    width:25px;
+}
+.text{
+    font-weight: bold;
+    opacity:0.7;
+    padding-top:4px;
+}
 .home ul li{
     margin: 10px;
-    
     display:flex;
     gap:10px;
     width:20px;
     list-style: none;
+    font-weight: bold;
+}
+.search{
+    opacity:0.7;
 }
 .invert{
     filter:invert(1);
@@ -35,4 +62,12 @@
     background-color: #121212;
     color:white;
 }
-
+.footer{
+    display: flex;
+    font-size:10px;
+    gap:10px;
+}
+.footer a{
+    text-decoration: none;
+    color:grey;
+}
