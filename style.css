@@ -71,6 +71,9 @@ body{
     background-color: #121212;
     color:white;
 }
+.right{
+    margin:12px 0px;
+}
 .footer{
     position: absolute;
     bottom: 0px;
@@ -84,6 +87,11 @@ body{
 }
 
 /* header work */
-.nav{
+.header{
+    display:flex;
     justify-content: space-between;
+}
+.header >*{
+    opacity:0.7;
+    padding:15px;
 }
