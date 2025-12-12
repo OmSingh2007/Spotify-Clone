@@ -97,8 +97,15 @@ body{
     padding:15px;
 }
 .playlist h1{
+    margin-left: 9px;
     padding:7px;
     font-size:23px;
+}
+.cardContainer{
+    margin:22px;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
 }
 .playlist .card{
     padding: 10px;
@@ -113,6 +120,18 @@ body{
 .card p{
     opacity: 0.7;
     font-size:14px;
+}
+#playbutton{
+    padding-left:1px;
+    width:21px;
+}
+.greencircle{
+    display:flex;
+    justify-content: center;
+    width:34px;
+    height:34px;
+    background-color: #31bb31;
+    border-radius:50%;
 }
 .card img{
     border-radius: 7px;
