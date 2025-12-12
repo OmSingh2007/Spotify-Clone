@@ -126,12 +126,18 @@ body{
     width:21px;
 }
 .greencircle{
+    position:absolute;
     display:flex;
     justify-content: center;
     width:34px;
     height:34px;
     background-color: #31bb31;
     border-radius:50%;
+    top: 184px;
+    right: 18px;
+}
+.card{
+    position:relative;
 }
 .card img{
     border-radius: 7px;
