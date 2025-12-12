@@ -123,7 +123,7 @@ body{
 }
 #playbutton{
     padding-left:1px;
-    width:21px;
+    width: 76px;
 }
 .greencircle{
     position:absolute;
@@ -131,10 +131,10 @@ body{
     justify-content: center;
     width:34px;
     height:34px;
-    background-color: #31bb31;
+    background-color: #1fdf64;
     border-radius:50%;
-    top: 184px;
-    right: 18px;
+    top: 181px;
+    right: 19px;
 }
 .card{
     position:relative;
