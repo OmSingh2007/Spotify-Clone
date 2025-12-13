@@ -112,7 +112,7 @@ body{
     padding-right:17px;
     background-color: #252525;
     border-radius: 7px;
-    width:200px;
+    width:170px;
 }
 .card h2{
     font-size:20px;
@@ -133,15 +133,17 @@ body{
     height:34px;
     background-color: #1fdf64;
     border-radius:50%;
-    top: 181px;
+    top: 152px;
     right: 19px;
+
+    transition:all ease-in 1s;
 }
 .card{
     position:relative;
 }
 .card img{
     border-radius: 7px;
-    width:200px;
+    width:170px;
     object-fit: contain;
 }
 .card >*{
