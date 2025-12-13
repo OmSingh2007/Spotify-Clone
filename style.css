@@ -138,6 +138,7 @@ body {
 
 /* header work */
 .header {
+    height: auto;
     background-color: rgb(34, 34, 34);
     display: flex;
     justify-content: space-between;
