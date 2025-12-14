@@ -224,11 +224,11 @@ body {
     position: absolute;
     display: flex;
     justify-content: center;
-    width: 34px;
-    height: 34px;
+    width: 42px;
+    height: 42px;
     background-color: #1fdf64;
     border-radius: 50%;
-    top: 152px;
+    top: 143px;
     right: 19px;
 
     transition: all ease-in 1s;
@@ -246,4 +246,11 @@ body {
 
 .card>* {
     padding: 4px;
+}
+.player{
+    background-color: black;
+    height: 44px;
+    border-radius:8px;
+    display:flex;
+    justify-content: center;
 }
