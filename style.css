@@ -138,7 +138,7 @@ body {
 
 /* header work */
 .header {
-    height: auto;
+    height: 58px;
     background-color: rgb(34, 34, 34);
     display: flex;
     justify-content: space-between;
@@ -249,6 +249,7 @@ body {
 }
 .player{
     background-color: black;
+    gap:28px;
     height: 44px;
     border-radius:8px;
     display:flex;
