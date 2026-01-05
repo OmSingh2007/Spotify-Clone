@@ -38,8 +38,7 @@ body {
 }
 
 .logo {
-    margin-right: 7px;
-    margin: 6px;
+    margin: 2px 3px 2px 6px;
     gap: 7px;
 }
 
@@ -50,13 +49,18 @@ body {
 
 .library {
     position: relative;
-    min-height: 75vh;
+    min-height: 67vh;
     gap: 10px;
     padding: 10px;
     padding-bottom: 5px;
     padding-right: 4px;
 }
-
+.library .songlist{
+    padding:11px;
+}
+.songlist ul li{
+    list-style:none;
+}
 .lib {
     opacity: 0.7;
     padding: 0px;
@@ -194,7 +198,7 @@ body {
     display: flex;
     gap: 10px;
     overflow-y: scroll;
-    height: 70vh;
+    height: 67vh;
     flex-wrap: wrap;
 }
 
@@ -250,7 +254,8 @@ body {
 .player{
     background-color: black;
     gap:28px;
-    height: 44px;
+    height: 47px;
+    width: 100vw;
     border-radius:8px;
     display:flex;
     justify-content: center;
