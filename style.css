@@ -58,8 +58,30 @@ body {
 .library .songlist{
     padding:11px;
 }
+.songlist{
+    overflow:scroll;
+}
 .songlist ul li{
+    display:flex;
+    gap:13px;
     list-style:none;
+    margin:10px;
+    padding:3px;
+}
+.playnow{
+    display: flex;
+    align-items: center;
+}
+.playnow img{
+    width: 27px;
+    height: 16px;
+}
+.songplay{
+    width: 50px;
+    height: 37px;
+}
+.songinfo{
+    display:flex;
 }
 .lib {
     opacity: 0.7;
