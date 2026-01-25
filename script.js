@@ -15,6 +15,35 @@ async function getsongs(){
     }
     return songs;
 }
+function secondtominute(second){
+    if(isNaN(second) || second<0){
+        return "00:00";
+    }
+    let minute=Math.floor(second/60);
+    let remainingsec=Math.floor(second%60);
+
+    let formattedmin=String(minute).padStart(2,'0');
+    let formattedsec=String(remainingsec).padStart(2,'0');
+    return `${formattedmin}:${formattedsec}`;
+}
+
+currSong.addEventListener("timeupdate",()=>{
+    let current=currSong.currentTime;
+    let duration=currSong.duration;
+
+    document.querySelector(".startTime").innerHTML=`${secondtominute(current)}`;
+    document.querySelector(".endTime").innerHTML=`${secondtominute(duration)}`;
+});
+
+document.querySelector(".seekbar").addEventListener("click",(e)=>{
+    let percent=(e.offsetX/e.target.getBoundingClientRect().width)*100;
+    document.querySelector(".pointer").style.left=percent+"%";
+    document.querySelector(".seekbar").style.backgroundColor="green";
+    currSong.currentTime=(currSong.duration*percent)/100;
+
+    document.querySelector(".seekbar").style.background = `linear-gradient(to right, #00ff5e ${percent}%, white ${percent}%)`;
+    
+}); 
 function playmusic(track){
 
         currSong.src="Songs/"+track+".mp3";
@@ -51,7 +80,7 @@ async function main(){
     });
 
     //Attach event listner to play and pause and next and previous song 
-    let play=document.querySelector(".playbutton")
+    let play=document.querySelector(".playbutton");
     play.addEventListener("click",()=>{
         if(currSong.paused){
             currSong.play();
