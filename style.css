@@ -49,9 +49,10 @@ body {
 
 .library {
     position: relative;
-    min-height: 65vh;
-    gap: 10px;
     padding: 10px;
+    display:flex;
+    flex-direction:column;
+    height: 65vh;
     padding-bottom: 5px;
     padding-right: 4px;
 }
@@ -59,24 +60,42 @@ body {
     padding:11px;
 }
 .songlist{
-    overflow:scroll;
+    flex: 1; /* Takes up all remaining space between heading and footer */
+    overflow-y: auto; /* Adds a scrollbar only to this section */
+    margin-bottom: 10px
 }
 .songlist ul li{
+    border:2px solid white;
     display:flex;
-    gap:13px;
+    border-radius:4px;
+    gap:25px;
+    position:relative;
     list-style:none;
-    margin:10px;
-    padding:3px;
+    margin:10px 0;
+    padding:6px;
+}
+.songlist li:hover{
+    cursor:pointer;
 }
 .playnow{
     display: flex;
     align-items: center;
+    font-size: 10px;
 }
 .playnow img{
     width: 27px;
     height: 16px;
+    position:absolute;
+    margin:2px;
+    right:0px
+}
+.songname{
+    position:absolute;
+    top:15px;
+    left:65px;
 }
 .songplay{
+    margin:2px;
     width: 50px;
     height: 37px;
 }
@@ -148,8 +167,6 @@ body {
 }
 
 .footer {
-    position: absolute;
-    bottom: 0px;
     display: flex;
     flex-wrap: wrap;
     font-size: 10px;
