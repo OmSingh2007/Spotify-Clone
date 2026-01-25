@@ -1,8 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Robot', sans-serif;
+}
+ 
 body {
     background-color: black;
     color: white;
+    overflow-x:hidden;
 }
 
 ::-webkit-scrollbar {
@@ -16,12 +23,6 @@ body {
 ::-webkit-scrollbar-thumb {
     background-color: #333;
     border-radius: 5px;
-}
-
-* {
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Robot', sans-serif;
 }
 
 .left {
@@ -126,7 +127,7 @@ body {
 .heading {
     display: flex;
     align-items: center;
-    margin: 10px;
+    margin: 4px;
     gap: 10px;
     opacity: 0.5;
     width: 100%;
@@ -267,7 +268,7 @@ body {
 
 #playbutton {
     padding-left: 1px;
-    width: 76px;
+    width: 24px;
 }
 
 .greencircle {
@@ -301,41 +302,65 @@ body {
     background-color: black;
     gap:16px;
     height: 47px;
-    width: 100vw;
+    width: 100%;
     border-radius:8px;
     display:flex;
     justify-content: center;
     align-items: center;
     position:relative;
 }
-.player img{
-    width: 20px;
-}
-.shuffle{
-    height:20px;
-    padding:5px;
-    opacity:0.5;
-}
-.nextsongbutton{
-    height: 20px;
-    padding:5px;
-    opacity:0.8;
-}
-.previousbutton{
-    height: 20px;
-    padding:5px;
-    opacity:0.8;
+.playbtns{
+    display:flex;
+    justify-content: space-around;
 }
 .playbutton{
-    height:20px;
-    background-color: white;
-    border-radius:50%;
-    padding:5px;
+    margin:0px 15px 0px 15px;
 }
-.reapeat{
-    height: 20px;
+.sp{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:8px;
+}
+.nr{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:8px;
+}
+.player img{
+    width: 18px;
+}
+.shuffle{
+    height:18px;
     padding:5px;
     opacity:0.5;
+    cursor:pointer;
+}
+.nextsongbutton{
+    height: 18px;
+    padding:5px;
+    opacity:0.8;
+    cursor:pointer;
+}
+.previousbutton{
+    height: 18px;
+    padding:5px;
+    opacity:0.8;
+    cursor:pointer;
+}
+.playbutton{
+    height:18px;
+    background-color: white;
+    border-radius:50%;
+    padding:7px;
+    cursor:pointer;
+}
+.reapeat{
+    height: 18px;
+    padding:5px;
+    opacity:0.5;
+    cursor:pointer;
 }
 .seekbar{
     height:4px;
@@ -345,6 +370,7 @@ body {
     position:absolute;
     bottom:-8px;
     width: 35%;
+    cursor:pointer;
 }
 .pointer{
     background-color:white;
@@ -354,5 +380,30 @@ body {
     border-radius:50%;
     position:relative;
     bottom:4px;
-    transition: left 0.5s
+    transition: left 0.5s;
+    cursor:pointer;
+}
+.songdetails{
+    opacity:0;
+    height:66px;
+    width: 359px;
+    position:absolute;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    justify-content: space-between;
+    left:15px;
+    top:4px;
+}
+.current-song-info{
+    width:280px;
+}
+.songdetails img{
+    height:57px;
+    width:69px;
+    border-radius:3px;
+}
+.time{
+    display:flex;
+    gap:455px;
 }

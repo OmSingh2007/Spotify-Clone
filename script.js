@@ -16,8 +16,16 @@ async function getsongs(){
     return songs;
 }
 function playmusic(track){
+
         currSong.src="Songs/"+track+".mp3";
         currSong.play();
+        //The change of the play and stop icon
+        document.querySelector(".playbutton img").src="Images/pause.svg";
+        //The image change in the playbar
+        document.querySelector("#current-song-image").src=`thumbnail/${track}.jpg`;
+        //The song name change in the playbar
+        document.querySelector(".current-song-info").innerHTML=track;
+        document.querySelector(".songdetails").style.opacity="1";
 }
 async function main(){
     let songs= await getsongs();
@@ -42,5 +50,17 @@ async function main(){
         });
     });
 
+    //Attach event listner to play and pause and next and previous song 
+    let play=document.querySelector(".playbutton")
+    play.addEventListener("click",()=>{
+        if(currSong.paused){
+            currSong.play();
+            document.querySelector(".playbutton img").src="Images/pause.svg";
+        }
+        else{
+            currSong.pause();
+            document.querySelector(".playbutton img").src="Images/play.svg";
+        }
+    });
 }
 main();
