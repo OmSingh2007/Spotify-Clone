@@ -116,6 +116,14 @@ async function main(){
             playmusic(songs[index+1].replaceAll("%20"," ").replaceAll("5C","").replace(".mp3",""));
         }
     });
+    //for hamburger
+    document.querySelector(".hamburger").addEventListener("click",()=>{
+        document.querySelector(".left").style.left="0";
+    });
+    //for closing the library
+    document.querySelector(".close").addEventListener("click",()=>{
+        document.querySelector(".left").style.left="-150%"
+    });
     
 }
 main();
