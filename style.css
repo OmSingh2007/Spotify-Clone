@@ -380,7 +380,7 @@ body {
     border-radius:50%;
     position:relative;
     bottom:4px;
-    transition: left 0.5s;
+    transition: left 0.1s;
     cursor:pointer;
 }
 .songdetails{
