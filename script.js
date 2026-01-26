@@ -30,9 +30,12 @@ function secondtominute(second){
 currSong.addEventListener("timeupdate",()=>{
     let current=currSong.currentTime;
     let duration=currSong.duration;
-
+    let percent=(current/duration)*100
     document.querySelector(".startTime").innerHTML=`${secondtominute(current)}`;
     document.querySelector(".endTime").innerHTML=`${secondtominute(duration)}`;
+    
+    document.querySelector(".pointer").style.left=percent +"%";
+    document.querySelector(".seekbar").style.background = `linear-gradient(to right, #00ff5e ${percent}%, white ${percent}%)`;
 });
 
 document.querySelector(".seekbar").addEventListener("click",(e)=>{
@@ -78,7 +81,7 @@ async function main(){
             playmusic(e.querySelector(".info").firstElementChild.innerHTML);
         });
     });
-
+    
     //Attach event listner to play and pause and next and previous song 
     let play=document.querySelector(".playbutton");
     play.addEventListener("click",()=>{
@@ -91,5 +94,6 @@ async function main(){
             document.querySelector(".playbutton img").src="Images/play.svg";
         }
     });
+    
 }
 main();
