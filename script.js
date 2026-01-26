@@ -77,7 +77,7 @@ async function main(){
     // Attaching a event listner to the li tag
     Array.from(document.querySelector(".songlist").getElementsByTagName("li")).forEach(e=>{
         e.addEventListener("click",()=>{
-            console.log(e.querySelector(".info").firstElementChild.innerHTML);
+          console.log(e.querySelector(".info").firstElementChild.innerHTML);
             playmusic(e.querySelector(".info").firstElementChild.innerHTML);
         });
     });
@@ -92,6 +92,28 @@ async function main(){
         else{
             currSong.pause();
             document.querySelector(".playbutton img").src="Images/play.svg";
+        }
+    });
+
+    let previousbutton=document.querySelector(".previousbutton");
+    previousbutton.addEventListener("click",()=>{
+        let currSongplaying="5C"+currSong.src.split("/").pop();
+        console.log(currSongplaying);
+        console.log(songs);
+        let index=songs.indexOf(currSongplaying);
+        if((index-1>=0)){
+            playmusic(songs[index-1].replaceAll("%20"," ").replaceAll("5C","").replace(".mp3",""));
+        }
+        
+    });
+    let next=document.querySelector(".nextsongbutton");
+    next.addEventListener("click",()=>{
+        let currSongplaying="5C"+currSong.src.split("/").pop();
+        console.log(currSongplaying);
+        console.log(songs);
+        let index=songs.indexOf(currSongplaying);
+        if((index+1<=songs.length)){
+            playmusic(songs[index+1].replaceAll("%20"," ").replaceAll("5C","").replace(".mp3",""));
         }
     });
     
