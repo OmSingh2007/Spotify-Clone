@@ -66,13 +66,13 @@ body {
     margin-bottom: 10px
 }
 .songlist ul li{
-    border:2px solid white;
+    /* border:2px solid white; */
     display:flex;
     border-radius:4px;
     gap:25px;
     position:relative;
     list-style:none;
-    margin:10px 0;
+    margin:4px 0;
     padding:6px;
 }
 .songlist li:hover{
@@ -405,5 +405,5 @@ body {
 }
 .time{
     display:flex;
-    gap:455px;
+    gap:85%;
 }
