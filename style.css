@@ -248,7 +248,7 @@ body {
     margin: 22px;
     display: flex;
     gap: 10px;
-    overflow-y: auto;
+    overflow-y: hidden;
     height: 65vh;
     flex-wrap: wrap;
 }
@@ -259,6 +259,7 @@ body {
     background-color: #252525;
     border-radius: 7px;
     width: 170px;
+    height: 289px;
 }
 
 .card h2 {
@@ -489,5 +490,18 @@ body {
     align-items: center;
     justify-content: space-between;
 }
-
+.current-song-info{
+    display:none;
+}
+.cardContainer{
+    justify-content: center;
+}
+.songdetails{
+    width:97px;
+}
+}
+@media (max-width:370px){
+    .time{
+        gap:45%;
+    }
 }
