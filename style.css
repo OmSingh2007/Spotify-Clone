@@ -248,7 +248,7 @@ body {
     margin: 22px;
     display: flex;
     gap: 10px;
-    overflow-y: scroll;
+    overflow-y: auto;
     height: 65vh;
     flex-wrap: wrap;
 }
@@ -286,7 +286,7 @@ body {
     top: 143px;
     right: 19px;
 
-    transition: all ease-in 1s;
+    /* transition: all ease-in 1s; */
 }
 
 .card {
@@ -390,7 +390,7 @@ body {
 .songdetails{
     opacity:0;
     height:66px;
-    width: 359px;
+    width: 220px;
     position:absolute;
     display:flex;
     justify-content: center;
@@ -405,6 +405,7 @@ body {
 .songdetails img{
     height:57px;
     width:69px;
+    margin:7px;
     border-radius:3px;
 }
 .time{
@@ -412,8 +413,8 @@ body {
     gap:85%;
 }
 .hamburger{
-    width: 40px;
-    height: 39px;
+    width: 30px;
+    height: 29px;
 }
 .hamburgercontainer{
     height: 37px;
@@ -441,4 +442,52 @@ body {
     .right{
         width: 100%;
     }
+}
+@media (max-width:540px) {
+    .card img {
+    border-radius: 7px;
+    width: 100px;
+    object-fit: contain;
+}
+.playlist .card {
+    padding: 10px;
+    padding-right: 17px;
+    background-color: #252525;
+    border-radius: 7px;
+    width: 100px;
+    height: 188px;
+}
+.card h2 {
+    font-size: 14px;
+}
+.card p {
+    opacity: 0.7;
+    font-size: 10px;
+}
+#playbutton {
+    padding-left: 1px;
+    width: 17px;
+}
+.greencircle {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 29px;
+    height: 29px;
+    background-color: #1fdf64;
+    border-radius: 50%;
+    top: 91px;
+    right: 17px;
+}
+.header {
+    height: 58px;
+    width: 100%;
+    background-color: #000000;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
 }
