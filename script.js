@@ -1,17 +1,21 @@
 let currSong=new Audio();
 let currentSongname=null;
 let isrepeat=false;
-async function getsongs(){
-    let a = await fetch("/Songs/");
+let currFolder;
+async function getsongs(folder){
+    currFolder=folder
+    let a = await fetch(`/Songs/${folder}`);
     let responce=await a.text();
     let div=document.createElement("div");
     div.innerHTML=responce;
+    console.log(responce);
     let as=div.getElementsByTagName("a");
     let songs=[];
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if(element.href.endsWith(".mp3")){
-            songs.push(element.href.split("%5CSongs%")[1]);
+            console.log(element.href.split("%5C")[1]);
+            songs.push(element.href.split(`%5C${currFolder}%`)[1]);
         }
 
     }
@@ -51,7 +55,8 @@ document.querySelector(".seekbar").addEventListener("click",(e)=>{
 }); 
 function playmusic(track){
         currentSongname=track;
-        currSong.src="Songs/"+track+".mp3";
+        currSong.src="Songs/"+currFolder+"/"+track+".mp3";
+        console.log("Songs/"+currFolder+"/"+track+".mp3");
         currSong.play();
         //The change of the play and stop icon
         document.querySelector(".playbutton img").src="Images/pause.svg";
@@ -62,7 +67,7 @@ function playmusic(track){
         document.querySelector(".songdetails").style.opacity="1";
 }
 async function main(){
-    let songs= await getsongs();
+    let songs= await getsongs("happyhits");
     let songul = document.querySelector(".songlist").getElementsByTagName("ul")[0];
     for(const song of songs){
         songul.innerHTML=songul.innerHTML+`<li>
