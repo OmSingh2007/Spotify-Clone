@@ -1,6 +1,7 @@
 let currSong=new Audio();
+let currentSongname=null;
 async function getsongs(){
-    let a = await fetch("http://127.0.0.1:3000/Songs/");
+    let a = await fetch("/Songs/");
     let responce=await a.text();
     let div=document.createElement("div");
     div.innerHTML=responce;
@@ -48,7 +49,7 @@ document.querySelector(".seekbar").addEventListener("click",(e)=>{
     
 }); 
 function playmusic(track){
-
+        currentSongname=track;
         currSong.src="Songs/"+track+".mp3";
         currSong.play();
         //The change of the play and stop icon
@@ -85,6 +86,10 @@ async function main(){
     //Attach event listner to play and pause and next and previous song 
     let play=document.querySelector(".playbutton");
     play.addEventListener("click",()=>{
+        // If there is no song playing currently the play button should become non-functional
+        if(currentSongname===null){
+            return;
+        }
         if(currSong.paused){
             currSong.play();
             document.querySelector(".playbutton img").src="Images/pause.svg";
