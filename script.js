@@ -1,5 +1,6 @@
 let currSong=new Audio();
 let currentSongname=null;
+let isrepeat=false;
 async function getsongs(){
     let a = await fetch("/Songs/");
     let responce=await a.text();
@@ -99,6 +100,9 @@ async function main(){
             document.querySelector(".playbutton img").src="Images/play.svg";
         }
     });
+    currSong.addEventListener("ended", () => {
+    document.querySelector(".nextsongbutton").click();
+    })
 
     let previousbutton=document.querySelector(".previousbutton");
     previousbutton.addEventListener("click",()=>{
@@ -121,6 +125,17 @@ async function main(){
             playmusic(songs[index+1].replaceAll("%20"," ").replaceAll("5C","").replace(".mp3",""));
         }
     });
+    //for repeat button
+    reapeat=document.querySelector(".reapeat").addEventListener("click",()=>{
+        isrepeat=!isrepeat
+        if(isrepeat){
+            currSong.currentTime=0;
+            currSong.play();
+        }
+        else{
+            document.querySelector(".nextsongbutton").click;
+        }
+    });
     //for hamburger
     document.querySelector(".hamburger").addEventListener("click",()=>{
         document.querySelector(".left").style.left="0";
@@ -128,6 +143,17 @@ async function main(){
     //for closing the library
     document.querySelector(".close").addEventListener("click",()=>{
         document.querySelector(".left").style.left="-150%"
+    });
+    //volume control
+    let Volume=document.querySelector(".range").getElementsByTagName("input")[0];
+    Volume.addEventListener("input",(e)=>{
+        currSong.volume=parseInt(e.target.value)/100;
+        if(currSong.volume==0){
+            document.querySelector(".volume").src="Images/mute.svg";
+        }
+        else{
+            document.querySelector(".volume").src="Images/volume.svg"
+        }
     });
     
 }
