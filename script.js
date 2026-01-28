@@ -130,6 +130,7 @@ async function main(){
         isrepeat=!isrepeat
         if(isrepeat){
             currSong.currentTime=0;
+            document.querySelector(".playbutton img").src="Images/pause.svg"
             currSong.play();
         }
         else{
