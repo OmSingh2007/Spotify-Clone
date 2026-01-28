@@ -295,6 +295,7 @@ body {
         opacity:1; 
     }
     background-color: rgb(64, 62, 62);
+    cursor: pointer;
 }
 .card {
     position: relative;
