@@ -292,8 +292,9 @@ body {
 .card:hover{
     .greencircle{
         top:143px;
-        opacity:1;
+        opacity:1; 
     }
+    background-color: rgb(64, 62, 62);
 }
 .card {
     position: relative;
