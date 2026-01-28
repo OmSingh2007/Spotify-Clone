@@ -248,7 +248,7 @@ body {
     margin: 22px;
     display: flex;
     gap: 10px;
-    overflow-y: hidden;
+    overflow-y: auto;
     height: 65vh;
     flex-wrap: wrap;
 }
@@ -413,6 +413,20 @@ body {
     display:flex;
     gap:85%;
 }
+.volumecontrol{
+    display:flex;
+    gap:7px;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    right:30px;
+    top:30px;
+}
+.range{
+    height: 4px;
+    display:flex;
+    justify-content: center;
+}
 .hamburger{
     width: 30px;
     height: 29px;
@@ -499,9 +513,15 @@ body {
 .songdetails{
     width:97px;
 }
+.volumecontrol{
+    display: none;
+}
 }
 @media (max-width:370px){
     .time{
         gap:45%;
+    }
+    .volumecontrol{
+        display: none;
     }
 }
