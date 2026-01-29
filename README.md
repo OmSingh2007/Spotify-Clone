@@ -37,5 +37,5 @@ timeupdate: Syncs the seekbar circle and the green gradient fill.
 ended: specific listener to trigger the "Next Song" logic automatically.
 
 🏃‍♂️ How to Run
-git clone https://github.com/yourusername/spotify-clone.git
+git clone
 Open the folder in VS Code.
