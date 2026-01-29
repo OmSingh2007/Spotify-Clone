@@ -31,9 +31,20 @@ async function getsongs(folder){
         </li>`;
         
     } 
+    //make all the icon's of play in the li tag
+    function makeallplay() {
+        Array.from(document.getElementsByClassName("playnow")).forEach(e=>{
+            let img=e.querySelector("img");
+            if(img){
+                img.src="Images/play.svg";
+            }
+        });
+    }
     // Attaching a event listner to the li tag
     Array.from(document.querySelector(".songlist").getElementsByTagName("li")).forEach(e=>{
         e.addEventListener("click",()=>{
+            makeallplay()
+            e.querySelector(".playnow img").src="Images/pause.svg";
             playmusic(e.querySelector(".info").firstElementChild.innerHTML);
         });
     });
@@ -138,6 +149,12 @@ async function main(){
         else{
             currSong.pause();
             document.querySelector(".playbutton img").src="Images/play.svg";
+            Array.from(document.getElementsByClassName("playnow")).forEach(e=>{
+            let img=e.querySelector("img");
+            if(img){
+                img.src="Images/play.svg";
+            }
+        });
         }
     });
     currSong.addEventListener("ended", () => {
