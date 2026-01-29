@@ -1,4 +1,5 @@
 Spotify Web Player Clone 🎵
+<br>
 A responsive, functional music player web app built from scratch using vanilla HTML, CSS, and JavaScript.
 
 This project focuses on replicating the core logic of a music streaming service—dynamic song loading, playback controls, and real-time seek bar updates—without relying on heavy frameworks.
@@ -22,7 +23,7 @@ CSS3: Custom properties, Flexbox, and CSS Transitions for hover effects and anim
 
 JavaScript (ES6+): Async/Await for fetching songs, Event Listeners for audio control, and DOM manipulation.
 
-<ul>How It Works</ul>
+How It Works
 Song Fetching: The getSongs() function fetches the directory listing, parses the HTML to find .mp3 files, and pushes them into a songs array.
 
 The "Play" Logic:
