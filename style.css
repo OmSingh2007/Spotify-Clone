@@ -429,6 +429,9 @@ body {
     right:30px;
     top:30px;
 }
+.volumecontrol:hover{
+    cursor:pointer;
+}
 .range{
     height: 4px;
     display:flex;
