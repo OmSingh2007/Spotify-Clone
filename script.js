@@ -19,6 +19,28 @@ async function getsongs(folder){
         }
 
     }
+    let songul = document.querySelector(".songlist").getElementsByTagName("ul")[0];
+    songul.innerHTML="";
+    for(const song of songs){
+        songul.innerHTML=songul.innerHTML+`<li>
+                            <img class="songplay" src="thumbnail/${song.replaceAll("%20"," ").replaceAll("5C","").replace(".mp3", "")}.jpg" alt="thumbnail">
+                            <div class="info">
+                                <div class="songname">${song.replaceAll("%20"," ").replaceAll("5C","").replace(".mp3", "")}</div>
+                            </div>
+                            <div class="playnow">
+                                <img class="invert" src="Images/play.svg" alt="playimg">
+                            </div>
+        </li>`;
+        
+    } 
+    // Attaching a event listner to the li tag
+    Array.from(document.querySelector(".songlist").getElementsByTagName("li")).forEach(e=>{
+        e.addEventListener("click",()=>{
+          console.log(e.querySelector(".info").firstElementChild.innerHTML);
+            playmusic(e.querySelector(".info").firstElementChild.innerHTML);
+        });
+    });
+
     return songs;
 }
 function secondtominute(second){
@@ -67,27 +89,8 @@ function playmusic(track){
         document.querySelector(".songdetails").style.opacity="1";
 }
 async function main(){
-    let songs= await getsongs("happyhits");
-    let songul = document.querySelector(".songlist").getElementsByTagName("ul")[0];
-    for(const song of songs){
-        songul.innerHTML=songul.innerHTML+`<li>
-                            <img class="songplay" src="thumbnail/${song.replaceAll("%20"," ").replaceAll("5C","").replace(".mp3", "")}.jpg" alt="thumbnail">
-                            <div class="info">
-                                <div class="songname">${song.replaceAll("%20"," ").replaceAll("5C","").replace(".mp3", "")}</div>
-                            </div>
-                            <div class="playnow">
-                                <img class="invert" src="Images/play.svg" alt="playimg">
-                            </div>
-        </li>`;
-        
-    }  
-    // Attaching a event listner to the li tag
-    Array.from(document.querySelector(".songlist").getElementsByTagName("li")).forEach(e=>{
-        e.addEventListener("click",()=>{
-          console.log(e.querySelector(".info").firstElementChild.innerHTML);
-            playmusic(e.querySelector(".info").firstElementChild.innerHTML);
-        });
-    });
+    //Get the list of all the songs
+    let songs= await getsongs("happyhits"); 
     
     //Attach event listner to play and pause and next and previous song 
     let play=document.querySelector(".playbutton");
@@ -161,6 +164,12 @@ async function main(){
             document.querySelector(".volume").src="Images/volume.svg"
         }
     });
-    
+    //load album when clicked on songs
+    Array.from(document.getElementsByClassName("card")).forEach(e=>{
+        e.addEventListener("click",async item=>{
+            songs=await getsongs(item.currentTarget.dataset.folder);
+        });
+    });
+
 }
 main();
